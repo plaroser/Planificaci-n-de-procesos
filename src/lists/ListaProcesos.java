@@ -51,8 +51,8 @@ public abstract class ListaProcesos<E> extends LinkedList<Proceso> {
 	public Proceso procesar(int cicloActual) {
 		if (hayProcesos(cicloActual)) {
 			Proceso aux = getSiguiente(cicloActual);
-			aux.restarciclo();
-			if (aux.getCiclos_restantes() == 0) {
+			aux.restarCiclo();
+			if (aux.getCiclos_restantes() <= 0) {
 				this.remove(aux);
 			}
 			return aux;

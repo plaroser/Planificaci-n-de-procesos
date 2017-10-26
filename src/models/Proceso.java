@@ -18,11 +18,13 @@ public class Proceso extends Object {
 		boolean esCorrecto = (getCiclos_restantes() - ciclos) >= 0;
 		if (esCorrecto)
 			this.setCiclos_restantes(getCiclos_restantes() - ciclos);
+		else
+			this.setCiclos_restantes(0);
 		return esCorrecto;
 
 	}
 
-	public boolean restarciclo() {
+	public boolean restarCiclo() {
 		return restarCiclo(1);
 	}
 
