@@ -2,7 +2,7 @@ package test;
 
 import java.util.LinkedList;
 
-import models.ListaMenosTiempo;
+import lists.ListaMenosTiempo;
 import models.Proceso;
 
 public class Main {

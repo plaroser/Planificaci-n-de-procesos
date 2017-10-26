@@ -1,9 +1,11 @@
-package models;
+package lists;
 
 import java.util.Comparator;
 import java.util.LinkedList;
 
 import javax.print.attribute.standard.RequestingUserName;
+
+import models.Proceso;
 
 @SuppressWarnings("serial")
 public class ListaMenosTiempo<E> extends ListaProcesos<Proceso> {

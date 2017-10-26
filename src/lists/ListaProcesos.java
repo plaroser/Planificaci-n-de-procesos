@@ -1,7 +1,9 @@
-package models;
+package lists;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+
+import models.Proceso;
 
 public abstract class ListaProcesos<E> extends LinkedList<Proceso> {
 	Comparator<Proceso> comparator;
