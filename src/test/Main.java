@@ -1,6 +1,7 @@
 package test;
 
 import lists.ListaFIFO;
+import lists.ListaMasCorto;
 import lists.ListaMenosTiempo;
 import lists.ListaProcesos;
 import lists.ListaRoundRobin;
@@ -11,7 +12,8 @@ public class Main {
 	public static void main(String[] args) {
 		ListaMenosTiempo<Proceso> listaMenosTiempo = new ListaMenosTiempo<Proceso>();
 		ListaFIFO<Proceso> listaFIFO = new ListaFIFO<>();
-		ListaRoundRobin<Proceso> listaRoundRobin= new ListaRoundRobin<>(2);
+		ListaRoundRobin<Proceso> listaRoundRobin = new ListaRoundRobin<>(2);
+		ListaMasCorto listaMasCorto = new ListaMasCorto();
 
 		listaMenosTiempo.add(new Proceso('A', 10, 3));
 		listaMenosTiempo.add(new Proceso('B', 8, 2));
@@ -43,7 +45,7 @@ public class Main {
 		// listaFIFO.add(new Proceso('H', 6, 1));
 		System.out.println("Ejecutados por orden de llegada:");
 		ejecutarLista(listaFIFO);
-		
+
 		listaRoundRobin.add(new Proceso('A', 10, 3));
 		listaRoundRobin.add(new Proceso('B', 8, 2));
 		listaRoundRobin.add(new Proceso('C', 4, 3));
@@ -58,6 +60,21 @@ public class Main {
 		// listaRoundRobin.add(new Proceso('H', 6, 1));
 		System.out.println("Ejecutados por orden de RoundRobin:");
 		ejecutarLista(listaRoundRobin);
+		
+		listaMasCorto.add(new Proceso('A', 10, 3));
+		listaMasCorto.add(new Proceso('B', 8, 4));
+		listaMasCorto.add(new Proceso('C', 4, 4));
+		// listaMasCorto.add(new Proceso('D', 10, 2));
+		// listaMasCorto.add(new Proceso('E', 20, 1));
+		// listaMasCorto.add(new Proceso('F', 14, 3));
+		// listaMasCorto.add(new Proceso('G', 12, 1));
+		// listaMasCorto.add(new Proceso('H', 13, 3));
+		// listaMasCorto.add(new Proceso('E', 30, 1));
+		// listaMasCorto.add(new Proceso('F', 27, 4));
+		// listaMasCorto.add(new Proceso('G', 20, 1));
+		// listaMasCorto.add(new Proceso('H', 6, 1));
+		System.out.println("Ejecutados por orden de Mas Corto:");
+		ejecutarLista(listaMasCorto);
 	}
 
 	@SuppressWarnings("unused")
