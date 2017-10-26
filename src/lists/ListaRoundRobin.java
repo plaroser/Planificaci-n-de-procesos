@@ -10,18 +10,12 @@ public class ListaRoundRobin<E> extends ListaFIFO<Proceso> {
 	static Comparator<Proceso> comparator = ((Proceso p1, Proceso p2) -> {
 		return p1.getCiclos_restantes() - p2.getCiclos_restantes();
 
-<<<<<<< Upstream, based on branch 'master' of https://plaroser@bitbucket.org/sergioplarojas/planificacion-de-procesos.git
-	public ListaRoundRobin(int quuamtun) {
-		super();
-		this.cuantum = quuamtun;
-=======
-	});
+
 
 	public ListaRoundRobin(int quamtun) {
 		super(comparator);
 		this.quantum = quamtun;
 		this.procesosAnteriores = new Proceso[quamtun];
->>>>>>> bc9c7c1 Lista RoundRobin reparada
 	}
 
 	@Override
