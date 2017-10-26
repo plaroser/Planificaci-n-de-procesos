@@ -5,13 +5,19 @@ public class Proceso extends Object {
 	private int tiempo_llegada;
 	private int ciclos_restantes;
 	private int ciclos_necesarios;
+	private boolean prioridadAlta;
 
-	public Proceso(char nombre, int tiempo_llegada, int ciclos_necesarios) {
+	public Proceso(char nombre, int tiempo_llegada, int ciclos_necesarios, boolean prioridadAlta) {
 		super();
 		this.nombre = nombre;
 		this.tiempo_llegada = tiempo_llegada;
 		this.ciclos_necesarios = ciclos_necesarios;
 		this.ciclos_restantes = ciclos_necesarios;
+		this.prioridadAlta = prioridadAlta;
+	}
+
+	public Proceso(char nombre, int tiempo_llegada, int ciclos_necesarios) {
+		this(nombre, tiempo_llegada, ciclos_necesarios, false);
 	}
 
 	public boolean restarCiclo(int ciclos) {
@@ -26,6 +32,14 @@ public class Proceso extends Object {
 
 	public boolean restarCiclo() {
 		return restarCiclo(1);
+	}
+
+	public boolean isPrioridadAlta() {
+		return prioridadAlta;
+	}
+
+	public void setPrioridadAlta(boolean prioridadAlta) {
+		this.prioridadAlta = prioridadAlta;
 	}
 
 	public char getNombre() {
@@ -63,7 +77,7 @@ public class Proceso extends Object {
 	@Override
 	public String toString() {
 		return nombre + " , llegada=" + tiempo_llegada + ", restantes=" + ciclos_restantes + ", necesarios="
-				+ ciclos_necesarios;
+				+ ciclos_necesarios + ((prioridadAlta) ? " Prioridad alta" : "");
 	}
 
 	@Override
