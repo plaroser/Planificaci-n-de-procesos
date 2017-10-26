@@ -2,7 +2,9 @@ package test;
 
 import java.util.LinkedList;
 
+import lists.ListaFIFO;
 import lists.ListaMenosTiempo;
+import lists.ListaProcesos;
 import models.Proceso;
 
 public class Main {
@@ -10,6 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		LinkedList<Proceso> procesos = new LinkedList<>();
 		ListaMenosTiempo<Proceso> listaMenosTiempo = new ListaMenosTiempo<Proceso>();
+		ListaFIFO<Proceso> listaFIFO = new ListaFIFO<>();
 
 		procesos.add(new Proceso('A', 4, 1));
 		procesos.add(new Proceso('B', 8, 1));
@@ -26,13 +29,20 @@ public class Main {
 
 		for (Proceso proceso : procesos) {
 			listaMenosTiempo.add(proceso);
+			listaFIFO.add(proceso);
 		}
+		System.out.println("Ejecutados por menor tiempo:");
+		ejecutarLista(listaMenosTiempo);
+		System.out.println("Ejecutados por orden de llegada:");
+		ejecutarLista(listaFIFO);
+	}
 
-		for (int i = 1; listaMenosTiempo.size() > 0; i++) {
-			Proceso pAux = listaMenosTiempo.procesar(i);
+	@SuppressWarnings("unused")
+	private static void ejecutarLista(ListaProcesos<Proceso> lista) {
+		for (int i = 1; lista.size() > 0; i++) {
+			Proceso pAux = lista.procesar(i);
 			System.out.println("Ciclo " + i + ((pAux != null) ? (". " + pAux) : (".- Esperando...")));
 		}
-
 	}
 
 }
