@@ -14,6 +14,18 @@ public class Proceso extends Object {
 		this.ciclos_restantes = ciclos_necesarios;
 	}
 
+	public boolean restarCiclo(int ciclos) {
+		boolean esCorrecto = (getCiclos_restantes() - ciclos) >= 0;
+		if (esCorrecto)
+			this.setCiclos_restantes(getCiclos_restantes() - ciclos);
+		return esCorrecto;
+
+	}
+
+	public boolean restarciclo() {
+		return restarCiclo(1);
+	}
+
 	public char getNombre() {
 		return nombre;
 	}
@@ -48,7 +60,7 @@ public class Proceso extends Object {
 
 	@Override
 	public String toString() {
-		return nombre + ", llegada=" + tiempo_llegada + ", restantes=" + ciclos_restantes + ", ciclos_necesarios="
+		return nombre + " , llegada=" + tiempo_llegada + ", restantes=" + ciclos_restantes + ", necesarios="
 				+ ciclos_necesarios;
 	}
 
