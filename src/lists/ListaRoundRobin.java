@@ -5,9 +5,9 @@ import models.Proceso;
 public class ListaRoundRobin<E> extends ListaFIFO<Proceso> {
 	private int cuantum;
 
-	public ListaRoundRobin(int cuamtun) {
+	public ListaRoundRobin(int quuamtun) {
 		super();
-		this.cuantum = cuamtun;
+		this.cuantum = quuamtun;
 	}
 
 	@Override
