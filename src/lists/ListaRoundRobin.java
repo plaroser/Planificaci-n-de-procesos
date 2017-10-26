@@ -30,7 +30,6 @@ public class ListaRoundRobin<E> extends ListaFIFO<Proceso> {
 						anteriorProceso = i;
 				}
 				aux = procesosAnteriores[anteriorProceso];
-
 				// Si el ultimo proceso ha sido nulo
 			} else {
 				aux = this.getSiguiente(cicloActual);
