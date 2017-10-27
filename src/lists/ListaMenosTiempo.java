@@ -9,7 +9,7 @@ import models.Proceso;
 
 @SuppressWarnings("serial")
 public class ListaMenosTiempo<E> extends ListaProcesos<Proceso> {
-	static Comparator<Proceso> comparator = ((Proceso o1, Proceso o2) -> {
+	static final Comparator<Proceso> comparator = ((Proceso o1, Proceso o2) -> {
 		if (o1.getCiclos_restantes() != o2.getCiclos_restantes())
 			return (o1.getCiclos_restantes() - o2.getCiclos_restantes());
 		else
