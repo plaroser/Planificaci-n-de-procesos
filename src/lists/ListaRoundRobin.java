@@ -10,7 +10,7 @@ public class ListaRoundRobin<E> extends ListaFIFO<Proceso> {
 	static Comparator<Proceso> comparator = ((Proceso p1, Proceso p2) -> {
 		return p1.getCiclos_restantes() - p2.getCiclos_restantes();
 
-
+	});
 
 	public ListaRoundRobin(int quamtun) {
 		super(comparator);
